@@ -22,7 +22,6 @@
 //         }
 // }
 
-
 // getData('2015-6-3','qAqAKivAXjZrwqnQ0s9PqhXDdbDbHlNabTHnrhLt');
 
 async function fetchData() {
@@ -39,22 +38,32 @@ async function fetchData() {
         );
         const infoFromServer = await result.json();
 
+        //store HTML in the content variable and clear it.
         const content = document.querySelector("#info");
         content.innerHTML = '';
 
+        //check photos array in the infoFromServer object has at least one element
         if (infoFromServer.photos && infoFromServer.photos.length > 0){
 
+            //Iterate over each object in the photos array. 
+            //The current object passed in the photo parameter
+            
             infoFromServer.photos.forEach(photo => {
+                
+                //create a new div and store in photoElement. div wiill hold information and image of the current photo
                 const photoElement = document.createElement('div');
+                
+                //sets innerHTML of the photoELement div to a string containing html
                 photoElement.innerHTML = `
                     <p>Camera Name: ${photo.camera.full_name} (${photo.camera.name})</p>
-                    <p>Rover ID: ${photo.rover.id}</p>
-                    <p>Earth Date: ${photo.earth_date}</p>
+                    <p>ID: ${photo.id}</p>
                     <p>Image:</p> 
                     <img src="${photo.img_src}" alt="Mars Rover Photo" style="max-width: 100%; height: auto;"/>
                 `;
+
+                //appends the photoElement div to the content div, adding it to the DOM.
                 content.appendChild(photoElement);
-            });
+            }); //close foreach
 
         }else {
             content.innerHTML = `<p>No photos available for this date.</p>`;
