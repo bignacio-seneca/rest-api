@@ -1,9 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
 
-h1{
-    font-family: "Dosis", sans-serif;
-    font-optical-sizing: auto;
+
+.text-center {
+    background-color: pink;
+    padding: 16px;
+}
+
+.title{
+    color: grey;
+    font-size: 4em;
+    font-family: Dosis, 'sans-serif';
     font-weight: 800;
-    font-style: normal;
-    font-size: 100px;
+}
+
+.content {
+    background-color: green;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+}
+
+.card {
+    width: 600px;
+    height: 600px;
 }

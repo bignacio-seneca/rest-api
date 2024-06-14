@@ -52,13 +52,19 @@ async function fetchData() {
                 
                 //create a new div and store in photoElement. div wiill hold information and image of the current photo
                 const photoElement = document.createElement('div');
-                
+                photoElement.classList.add('col-md-4', 'mb-4');
                 //sets innerHTML of the photoELement div to a string containing html
                 photoElement.innerHTML = `
-                    <p>Camera Name: ${photo.camera.full_name} (${photo.camera.name})</p>
-                    <p>ID: ${photo.id}</p>
-                    <p>Image:</p> 
-                    <img src="${photo.img_src}" alt="Mars Rover Photo" style="max-width: 100%; height: auto;"/>
+            
+                <div class="card h-100">
+                    <div class="card-body">
+                            <p>Camera Name: ${photo.camera.full_name} (${photo.camera.name})</p>
+                            <p>ID: ${photo.id}</p>
+                            <p>Image:</p> 
+                            <img src="${photo.img_src}" alt="Mars Rover Photo" class="img-fluid"/>
+                     </div>
+                </div>
+
                 `;
 
                 //appends the photoElement div to the content div, adding it to the DOM.
@@ -76,3 +82,13 @@ async function fetchData() {
 
 
 }
+
+
+
+                    
+/* <div class="card">
+<p>Camera Name: ${photo.camera.full_name} (${photo.camera.name})</p>
+<p>ID: ${photo.id}</p>
+<p>Image:</p> 
+<img src="${photo.img_src}" alt="Mars Rover Photo";"/>
+</div> */
