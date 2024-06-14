@@ -56,13 +56,12 @@ async function fetchData() {
                 //sets innerHTML of the photoELement div to a string containing html
                 photoElement.innerHTML = `
             
-                <div class="card h-100">
-                    <div class="card-body">
-                            <p>Camera Name: ${photo.camera.full_name} (${photo.camera.name})</p>
-                            <p>ID: ${photo.id}</p>
-                            <p>Image:</p> 
-                            <img src="${photo.img_src}" alt="Mars Rover Photo" class="img-fluid"/>
-                     </div>
+                <div class="card text-center">
+                <img src="${photo.img_src}" alt="Mars Rover Photo" class="card-img-top"/>
+                <div class="card-body">
+                    <h5 class="card-title">${photo.camera.full_name} (${photo.camera.name})</h5>
+                    <h6 class="card-subtitle">ID: ${photo.id}</h6>
+                </div>
                 </div>
 
                 `;
